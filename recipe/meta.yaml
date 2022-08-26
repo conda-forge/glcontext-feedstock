@@ -10,7 +10,7 @@ source:
   sha256: 757f36ce8c72d81d871a57580a41e3298bb3f31b70e6d7a5795b96b1820e5d37
 
 build:
-  number: 2
+  number: 3
   script: {{ PYTHON }} -m pip install . -vv
   skip: true  # [py<35]
 
@@ -20,6 +20,8 @@ requirements:
     - {{ compiler('cxx') }}
     - {{ cdt('libx11-devel') }}  # [linux]
     - {{ cdt('xorg-x11-proto-devel') }}  # [linux]
+    - python  # [build_platform != target_platform]
+    - cross-python_{{ target_platform }}  # [build_platform != target_platform]
 
   host:
     - python
