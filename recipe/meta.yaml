@@ -1,5 +1,5 @@
 {% set name = "glcontext" %}
-{% set version = "2.3.7" %}
+{% set version = "2.4.0" %}
 
 package:
   name: {{ name|lower }}
@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://github.com/moderngl/glcontext/archive/{{ version }}.tar.gz
-  sha256: 91f649b1b7db6ebb66ca7c0ec5e032c9abd19975caeefb77c8fe063a401e7fe3
+  sha256: ba7a05895239671dfa5448715d5cb708881695aad5706503829a11c63fd31a4e
 
 build:
   number: 0
@@ -19,8 +19,10 @@ requirements:
     - cross-python_{{ target_platform }}     # [build_platform != target_platform]
     - {{ compiler('c') }}
     - {{ compiler('cxx') }}
-    - {{ cdt('libx11-devel') }}  # [linux]
+    - {{ cdt('libx11-devel') }}          # [linux]
     - {{ cdt('xorg-x11-proto-devel') }}  # [linux]
+    - {{ cdt('mesa-libegl-devel') }}     # [linux]
+    - {{ cdt('mesa-libgl-devel')}}       # [linux]
 
   host:
     - python
