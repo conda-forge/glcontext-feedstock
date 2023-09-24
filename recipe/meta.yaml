@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://github.com/moderngl/glcontext/archive/{{ version }}.tar.gz
-  sha256: ba7a05895239671dfa5448715d5cb708881695aad5706503829a11c63fd31a4e
+  sha256: 78e4e2df1c8ba18a28d5b449c42cfd0db16c894d2b8d7a73ade8cd013cb5b0fe
 
 build:
   number: 1
