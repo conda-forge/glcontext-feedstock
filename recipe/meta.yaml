@@ -10,7 +10,7 @@ source:
   sha256: 69ff64297e571d35d26764f9395404a3ecb1b40885cbe1d69e2cd641293a2b21
 
 build:
-  number: 0
+  number: 1
   script: {{ PYTHON }} -m pip install . -vv
 
 requirements:
@@ -28,6 +28,7 @@ requirements:
   host:
     - python
     - pip
+    - setuptools
 
   run:
     - python
