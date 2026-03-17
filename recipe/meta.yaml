@@ -10,7 +10,7 @@ source:
   sha256: 69ff64297e571d35d26764f9395404a3ecb1b40885cbe1d69e2cd641293a2b21
 
 build:
-  number: 2
+  number: 3
   script: {{ PYTHON }} -m pip install . -vv
 
 requirements:
@@ -20,16 +20,16 @@ requirements:
     - {{ compiler('c') }}
     - {{ stdlib("c") }}
     - {{ compiler('cxx') }}
-    - {{ cdt('libx11-devel') }}          # [linux]
-    - {{ cdt('xorg-x11-proto-devel') }}  # [linux]
-    - {{ cdt('mesa-libegl-devel') }}     # [linux]
-    - {{ cdt('mesa-libgl-devel') }}       # [linux]
 
   host:
     - python
     - pip
     - setuptools
 
+    - xorg-libx11                        # [linux]
+    - xorg-xorgproto                     # [linux]
+    - libegl-devel                       # [linux]
+    - libgl-devel                         # [linux]
   run:
     - python
 
