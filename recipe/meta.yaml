@@ -1,5 +1,5 @@
 {% set name = "glcontext" %}
-{% set version = "3.0.0" %}
+{% set version = "3.1.0" %}
 
 package:
   name: {{ name|lower }}
@@ -7,10 +7,10 @@ package:
 
 source:
   url: https://github.com/moderngl/glcontext/archive/{{ version }}.tar.gz
-  sha256: 69ff64297e571d35d26764f9395404a3ecb1b40885cbe1d69e2cd641293a2b21
+  sha256: dea6398cdf161ce02be442cd1bbb75cf8f4f7c3e09f803ebe6d516db5def68e9
 
 build:
-  number: 4
+  number: 0
   script: {{ PYTHON }} -m pip install . -vv
 
 requirements:
